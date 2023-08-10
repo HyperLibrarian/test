@@ -1,0 +1,172 @@
+Log file created at: 2023/08/02 16:53:33
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230802 16:53:33.843483 16359 DeviceManager.cpp:54] DeviceManager init ...
+[I20230802 16:53:33.844942 16359 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230802 16:53:33.970024 16359 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230802 16:53:33.970916 16359 DeviceManager.cpp:373] Current usb device port list::
+[I20230802 16:53:33.970991 16359 DeviceManager.cpp:375]         - 2-3-12.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230802 16:53:33.971072 16359 DeviceManager.cpp:375]         - 2-3-12.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230802 16:53:33.971151 16359 DeviceManager.cpp:375]         - 2-3-12.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230802 16:53:33.971263 16359 DeviceManager.cpp:375]         - 2-3-12.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230802 16:53:33.971314 16359 DeviceManager.cpp:375]         - 2-3-12.7 | Orbbec HID Interface
+[I20230802 16:53:33.971410 16359 DeviceManager.cpp:345] Devices matched:
+[I20230802 16:53:33.971454 16359 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230802 16:53:33.972688 16359 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230802 16:53:33.973868 16359 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230802 16:53:33.975497 16359 DeviceManager.cpp:50] DeviceManager construct done
+[I20230802 16:53:33.975594 16359 Context.cpp:51] Context created!
+[I20230802 16:53:33.975662 16359 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230802 16:53:33.976718 16359 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230802 16:53:33.977735 16359 TofUvcDevice.cpp:293] init sensor map start!
+[I20230802 16:53:33.977816 16359 TofUvcDevice.cpp:311] init sensor map done!
+[I20230802 16:53:33.977886 16359 TofUvcDevice.cpp:179] Create command start!
+[I20230802 16:53:33.978749 16359 VendorCommand.cpp:187] VendorCommand constructor 0x6073ce0
+[I20230802 16:53:33.978806 16359 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230802 16:53:33.980154 16359 TofUvcDevice.cpp:228] Create command done!
+[I20230802 16:53:33.992892 16359 AbstractDevice.cpp:140] SN has invisible character. replace with '#'. oldSn: BX2J7200063, newSn: BX2J7200063
+[I20230802 16:53:33.993044 16359 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230802 16:53:33.993129 16359 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230802 16:53:34.006027 16359 HostProtocol.cpp:791] Init read rawData failed!
+[W20230802 16:53:34.006240 16359 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230802 16:53:34.006632 16359 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230802 16:53:34.006726 16359 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230802 16:53:34.067463 16359 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230802 16:53:34.067756 16359 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230802 16:53:34.070322 16359 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230802 16:53:34.070420 16359 Pipeline.cpp:26] Pipeline init ...
+[W20230802 16:53:34.071153 16359 Pipeline.cpp:170] Default config file is not loaded!
+[I20230802 16:53:34.071348 16359 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230802 16:53:34.071466 16359 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 16:53:34.071563 16359 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230802 16:53:34.071627 16359 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 16:53:34.072315 16359 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 16:53:34.072397 16359 Pipeline.cpp:47] Pipeline init done!
+[I20230802 16:53:34.079063 16359 ObUvcDevice.cpp:56] uvc_open success
+[W20230802 16:53:34.079339 16359 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 16:53:34.079452 16359 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 16:53:34.080154 16359 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:34.080247 16359 TofUvcDevice.cpp:387] Color sensor has been created!
+[I20230802 16:53:34.081185 16359 VideoSensor.cpp:389] Query stream profile! size= 90, SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:34.089063 16359 ObUvcDevice.cpp:56] uvc_open success
+[W20230802 16:53:34.089277 16359 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 16:53:34.089390 16359 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 16:53:34.089534 16359 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:34.089610 16359 TofUvcDevice.cpp:363] Depth sensor has been created!
+[I20230802 16:53:34.089737 16359 VideoSensor.cpp:154] device has Y16 format,no need to add virtual format!
+[I20230802 16:53:34.089859 16359 VideoSensor.cpp:389] Query stream profile! size= 12, SensorType=OB_SENSOR_DEPTH
+[W20230802 16:53:34.090018 16359 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 16:53:34.090108 16359 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 16:53:34.090198 16359 Pipeline.cpp:181] Pipeline start() start!
+[I20230802 16:53:34.094273 16359 FrameProcessingBlockManager.cpp:75]  FrameProcessingBlockManager started, 0 processingblocks contained!
+[I20230802 16:53:34.094424 16359 Pipeline.cpp:226] Start stream ...
+[I20230802 16:53:34.094492 16359 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:34.094569 16359 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:101114752, frame obj total size:0.293365MB
+[I20230802 16:53:34.094645 16359 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230802 16:53:34.094688 16359 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 16:53:34.094727 16359 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230802 16:53:34.094765 16359 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_RGB888
+[I20230802 16:53:34.094805 16359 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230802 16:53:34.094854 16359 ObUvcDevice.cpp:325] playProfile: infIndex= 1 selected_format.width= 640 height=480.format=5
+[I20230802 16:53:34.470860 16359 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230802 16:53:34.471068 16359 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:34.471276 16359 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_COLOR streamType=OB_STREAM_COLOR
+[I20230802 16:53:34.471365 16359 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:34.472111 16359 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10DepthFrameEEE, obj addr:101114896, frame obj total size:0.586341MB
+[I20230802 16:53:34.472237 16359 FrameBufferManager.cpp:107] DepthFrame bufferManager created!
+[I20230802 16:53:34.472308 16359 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 16:53:34.472373 16359 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230802 16:53:34.472433 16359 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_Y16
+[I20230802 16:53:34.472496 16359 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230802 16:53:34.472561 16359 ObUvcDevice.cpp:325] playProfile: infIndex= 3 selected_format.width= 640 height=480.format=8
+[I20230802 16:53:34.475941 16359 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230802 16:53:34.476047 16359 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:34.476125 16359 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_DEPTH streamType=OB_STREAM_DEPTH
+[I20230802 16:53:34.476171 16359 Pipeline.cpp:239] Start stream done!
+[I20230802 16:53:34.476269 16359 Pipeline.cpp:222] Pipeline start() done!
+[W20230802 16:53:34.576426 16359 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 16:53:34.576720 16359 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 16:53:34.676980 16359 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 16:53:34.677255 16359 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 16:53:34.777523 16359 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 16:53:34.777720 16359 Pipeline.cpp:86] frameSet is nullptr
+[I20230802 16:53:34.836621 16377 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=0.586341MB, max limit=2048MB}
+[W20230802 16:53:34.836812 16377 VideoSensor.cpp:485]  The frame is dropped because data size unexpected, SensorType=OB_SENSOR_DEPTH
+[W20230802 16:53:34.877936 16359 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 16:53:34.878096 16359 Pipeline.cpp:86] frameSet is nullptr
+[I20230802 16:53:34.883440 16376 FrameBufferManager.cpp:33] New frame buffer allocated=0.293365MB, total usage: {allocated=0.879705MB, max limit=2048MB}
+[I20230802 16:53:34.883759 16376 FrameProcessingBlock.cpp:57] FrameProcessingBlock@N11libobsensor15FormatConverterE process thread started!
+[I20230802 16:53:34.883985 16376 FrameBufferManager.cpp:33] New frame buffer allocated=0.293365MB, total usage: {allocated=1.17307MB, max limit=2048MB}
+[I20230802 16:53:34.885447 16392 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:547071462192, frame obj total size:0.879302MB
+[I20230802 16:53:34.885613 16392 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230802 16:53:34.885704 16392 FrameBufferManager.cpp:33] New frame buffer allocated=0.879302MB, total usage: {allocated=2.05237MB, max limit=2048MB}
+[W20230802 16:53:34.885843 16392 FormatConverter.cpp:83] Failed to decompress color frame
+[W20230802 16:53:34.885979 16392 FormatConverter.cpp:83] Failed to decompress color frame
+[I20230802 16:53:34.957832 16377 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_8FrameSetEEE, obj addr:547138602640, frame obj total size:0.000174522MB
+[W20230802 16:53:34.978335 16359 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 16:53:34.978547 16359 Pipeline.cpp:86] frameSet is nullptr
+[I20230802 16:53:34.988662 16377 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=2.63871MB, max limit=2048MB}
+[I20230802 16:53:35.021814 16377 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=3.22505MB, max limit=2048MB}
+[I20230802 16:53:35.023043 16377 FrameBufferManager.cpp:33] New frame buffer allocated=0.000174522MB, total usage: {allocated=3.22523MB, max limit=2048MB}
+[I20230802 16:53:35.109067 16359 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:102933088, frame obj total size:0.879302MB
+[I20230802 16:53:35.110123 16359 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230802 16:53:35.111027 16359 FrameBufferManager.cpp:33] New frame buffer allocated=0.879302MB, total usage: {allocated=4.10453MB, max limit=2048MB}
+[I20230802 16:53:35.135720 16392 FrameBufferManager.cpp:33] New frame buffer allocated=0.879302MB, total usage: {allocated=4.98383MB, max limit=2048MB}
+[I20230802 16:53:35.142267 16359 Pipeline.cpp:350] Pipeline stop start!
+[I20230802 16:53:35.142366 16359 Pipeline.cpp:322] Stop stream ...
+[I20230802 16:53:35.142411 16359 VideoSensor.cpp:629] VideoSensor::stop, SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:35.142452 16359 ObUvcDevice.cpp:81] ObUvcDevice::stopStream()...
+[I20230802 16:53:35.144948 16359 ObUvcDevice.cpp:85] ObUvcDevice::stopStream() done
+[I20230802 16:53:35.145035 16359 VideoSensor.cpp:662] stream stoped! SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:35.145107 16359 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 16:53:35.335474 16359 VideoSensor.cpp:671] VideoSensor::stop done, SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:35.337412 16359 Pipeline.cpp:335] Sensor stop, sensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:35.337551 16359 VideoSensor.cpp:629] VideoSensor::stop, SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:35.337627 16359 ObUvcDevice.cpp:81] ObUvcDevice::stopStream()...
+[I20230802 16:53:35.362368 16359 ObUvcDevice.cpp:85] ObUvcDevice::stopStream() done
+[I20230802 16:53:35.363662 16359 VideoSensor.cpp:662] stream stoped! SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:35.364475 16359 FrameProcessingBlock.cpp:72] FrameProcessingBlock@N11libobsensor15FormatConverterE process thread stoped!
+[I20230802 16:53:35.364588 16359 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 16:53:35.364661 16359 FrameBufferManager.hpp:62] FrameBufferManager destroyed! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE,  obj addr:101114752
+[I20230802 16:53:35.364794 16359 FrameBufferManager.cpp:54] Frame buffer released=0.293365MB, total usage: {allocated=4.69047MB, max limit=2048MB}
+[I20230802 16:53:35.364929 16359 FrameBufferManager.cpp:54] Frame buffer released=0.293365MB, total usage: {allocated=4.3971MB, max limit=2048MB}
+[I20230802 16:53:35.564934 16359 VideoSensor.cpp:671] VideoSensor::stop done, SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:35.565161 16359 Pipeline.cpp:335] Sensor stop, sensorType=OB_SENSOR_COLOR
+[I20230802 16:53:35.565268 16359 Pipeline.cpp:341] Stop stream done!
+[I20230802 16:53:35.584280 16359 FrameProcessingBlockManager.cpp:84]  FrameProcessingBlockManager stoped!
+[I20230802 16:53:35.584440 16359 FrameProcessingBlockManager.cpp:20] Processing block list cleared!
+[I20230802 16:53:35.584537 16359 Pipeline.cpp:379] Pipeline stop done!
+[I20230802 16:53:35.584619 16359 FrameBufferManager.hpp:62] FrameBufferManager destroyed! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE,  obj addr:547071462192
+[I20230802 16:53:35.584982 16359 FrameBufferManager.cpp:54] Frame buffer released=0.879302MB, total usage: {allocated=3.5178MB, max limit=2048MB}
+[I20230802 16:53:35.585306 16359 FrameBufferManager.cpp:54] Frame buffer released=0.879302MB, total usage: {allocated=2.6385MB, max limit=2048MB}
+[I20230802 16:53:35.585901 16359 FrameBufferManager.hpp:62] FrameBufferManager destroyed! @N11libobsensor18FrameBufferManagerINS_10DepthFrameEEE,  obj addr:101114896
+[I20230802 16:53:35.586122 16359 FrameBufferManager.cpp:54] Frame buffer released=0.586341MB, total usage: {allocated=2.05216MB, max limit=2048MB}
+[I20230802 16:53:35.586670 16359 FrameBufferManager.cpp:54] Frame buffer released=0.586341MB, total usage: {allocated=1.46582MB, max limit=2048MB}
+[I20230802 16:53:35.587133 16359 FrameBufferManager.cpp:54] Frame buffer released=0.586341MB, total usage: {allocated=0.879477MB, max limit=2048MB}
+[I20230802 16:53:35.588119 16359 FrameBufferManager.hpp:62] FrameBufferManager destroyed! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE,  obj addr:102933088
+[I20230802 16:53:35.588224 16359 FrameBufferManager.cpp:54] Frame buffer released=0.879302MB, total usage: {allocated=0.000174522MB, max limit=2048MB}
+[I20230802 16:53:35.588340 16359 Pipeline.cpp:71] Pipeline deInit start!
+[I20230802 16:53:35.588403 16359 Pipeline.cpp:79] Pipeline deInit done!
+[I20230802 16:53:35.589398 16359 FrameBufferManager.hpp:62] FrameBufferManager destroyed! @N11libobsensor18FrameBufferManagerINS_8FrameSetEEE,  obj addr:547138602640
+[I20230802 16:53:35.589501 16359 FrameBufferManager.cpp:54] Frame buffer released=0.000174522MB, total usage: {allocated=0MB, max limit=2048MB}
+[I20230802 16:53:35.590323 16359 TofUvcDevice.cpp:76] ~TofUvcDevice start!
+[I20230802 16:53:35.590437 16359 TofUvcDevice.cpp:81] ~TofUvcDevice done!
+[I20230802 16:53:36.068746 16359 VideoSensor.cpp:287] VideoSensor::~VideoSensor(), SensorType=OB_SENSOR_COLOR
+[I20230802 16:53:36.069047 16359 VideoSensor.cpp:287] VideoSensor::~VideoSensor(), SensorType=OB_SENSOR_DEPTH
+[I20230802 16:53:36.069195 16359 FrameProcessor.cpp:557] try remove eventId: PropertyValueUpdate
+[I20230802 16:53:36.069304 16359 FrameProcessor.cpp:557] try remove eventId: DepthStreamProfileChanged
+[I20230802 16:53:36.070721 16359 VendorCommand.cpp:195] destructor 0x6073ce0
+[I20230802 16:53:36.070842 16359 VendorCommand.cpp:439] disableHeartBeat heartBeatHelper_: 0
+[I20230802 16:53:36.070916 16359 HostProtocol.cpp:143] ~HostProtocol()
+[I20230802 16:53:36.071033 16363 HostProtocol.cpp:171] emitTranDataFutureSignalThread_ finish
+[I20230802 16:53:36.071398 16359 ContextLibusb.cpp:56] UsbContext::stopEventHandler()
+[I20230802 16:53:36.071774 16359 Context.cpp:55] Context destroying ...
+[I20230802 16:53:36.071871 16359 DeviceManager.cpp:103] DeviceManager destroy ...
+[I20230802 16:53:36.071945 16359 ContextLibusb.cpp:56] UsbContext::stopEventHandler()
+[I20230802 16:53:36.073972 16359 DeviceManager.cpp:131] DeviceManager destroy done
+[I20230802 16:53:36.074085 16359 DeviceManager.cpp:137] DeviceManager Destructors  done

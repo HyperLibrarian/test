@@ -1,0 +1,212 @@
+Log file created at: 2023/08/02 15:00:18
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230802 15:00:18.821591 13748 DeviceManager.cpp:54] DeviceManager init ...
+[I20230802 15:00:18.821952 13748 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230802 15:00:18.832335 13748 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230802 15:00:18.833866 13748 DeviceManager.cpp:373] Current usb device port list::
+[I20230802 15:00:18.833968 13748 DeviceManager.cpp:375]         - 2-3-8.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230802 15:00:18.834007 13748 DeviceManager.cpp:375]         - 2-3-8.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230802 15:00:18.834064 13748 DeviceManager.cpp:375]         - 2-3-8.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230802 15:00:18.834118 13748 DeviceManager.cpp:375]         - 2-3-8.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230802 15:00:18.834148 13748 DeviceManager.cpp:375]         - 2-3-8.7 | Orbbec HID Interface
+[I20230802 15:00:18.834213 13748 DeviceManager.cpp:345] Devices matched:
+[I20230802 15:00:18.834242 13748 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230802 15:00:18.834369 13748 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230802 15:00:18.834434 13748 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230802 15:00:18.834475 13748 DeviceManager.cpp:50] DeviceManager construct done
+[I20230802 15:00:18.834527 13748 Context.cpp:51] Context created!
+[I20230802 15:00:18.834569 13748 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230802 15:00:18.834637 13748 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230802 15:00:18.834846 13748 TofUvcDevice.cpp:293] init sensor map start!
+[I20230802 15:00:18.834911 13748 TofUvcDevice.cpp:311] init sensor map done!
+[I20230802 15:00:18.834942 13748 TofUvcDevice.cpp:179] Create command start!
+[I20230802 15:00:18.835331 13748 VendorCommand.cpp:187] VendorCommand constructor 0x2c09be60
+[I20230802 15:00:18.835386 13748 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230802 15:00:18.835417 13748 TofUvcDevice.cpp:228] Create command done!
+[I20230802 15:00:18.837198 13748 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230802 15:00:18.837268 13748 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230802 15:00:18.838613 13748 HostProtocol.cpp:791] Init read rawData failed!
+[W20230802 15:00:18.838735 13748 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230802 15:00:18.839033 13748 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230802 15:00:18.839154 13748 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230802 15:00:18.873142 13748 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230802 15:00:18.873476 13748 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230802 15:00:18.873569 13748 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230802 15:00:18.873618 13748 Pipeline.cpp:26] Pipeline init ...
+[W20230802 15:00:18.873687 13748 Pipeline.cpp:170] Default config file is not loaded!
+[I20230802 15:00:18.873764 13748 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230802 15:00:18.873814 13748 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:00:18.873872 13748 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230802 15:00:18.873914 13748 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:00:18.873970 13748 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 15:00:18.874012 13748 Pipeline.cpp:47] Pipeline init done!
+[I20230802 15:00:18.875962 13748 ObUvcDevice.cpp:56] uvc_open success
+[W20230802 15:00:18.876081 13748 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:00:18.876150 13748 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 15:00:18.876274 13748 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:18.876307 13748 TofUvcDevice.cpp:387] Color sensor has been created!
+[I20230802 15:00:18.876528 13748 VideoSensor.cpp:389] Query stream profile! size= 90, SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:18.888379 13748 ObUvcDevice.cpp:56] uvc_open success
+[W20230802 15:00:18.888495 13748 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:00:18.888536 13748 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 15:00:18.888605 13748 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_DEPTH
+[I20230802 15:00:18.888633 13748 TofUvcDevice.cpp:363] Depth sensor has been created!
+[I20230802 15:00:18.888727 13748 VideoSensor.cpp:154] device has Y16 format,no need to add virtual format!
+[I20230802 15:00:18.888783 13748 VideoSensor.cpp:389] Query stream profile! size= 12, SensorType=OB_SENSOR_DEPTH
+[W20230802 15:00:18.888875 13748 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:00:18.888907 13748 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 15:00:18.888932 13748 Pipeline.cpp:181] Pipeline start() start!
+[I20230802 15:00:18.891420 13748 FrameProcessingBlockManager.cpp:75]  FrameProcessingBlockManager started, 0 processingblocks contained!
+[I20230802 15:00:18.892292 13748 Pipeline.cpp:226] Start stream ...
+[I20230802 15:00:18.893414 13748 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:18.895069 13748 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:738813216, frame obj total size:0.293365MB
+[I20230802 15:00:18.896086 13748 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230802 15:00:18.896965 13748 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 15:00:18.897384 13748 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230802 15:00:18.897765 13748 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_RGB888
+[I20230802 15:00:18.898137 13748 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230802 15:00:18.898519 13748 ObUvcDevice.cpp:325] playProfile: infIndex= 1 selected_format.width= 640 height=480.format=5
+[I20230802 15:00:18.904963 13748 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230802 15:00:18.905088 13748 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:18.905126 13748 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_COLOR streamType=OB_STREAM_COLOR
+[I20230802 15:00:18.905161 13748 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_DEPTH
+[I20230802 15:00:18.905200 13748 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10DepthFrameEEE, obj addr:738813360, frame obj total size:0.586341MB
+[I20230802 15:00:18.905249 13748 FrameBufferManager.cpp:107] DepthFrame bufferManager created!
+[I20230802 15:00:18.905290 13748 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230802 15:00:18.905319 13748 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230802 15:00:18.905375 13748 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_Y16
+[I20230802 15:00:18.905423 13748 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230802 15:00:18.905459 13748 ObUvcDevice.cpp:325] playProfile: infIndex= 3 selected_format.width= 640 height=480.format=8
+[I20230802 15:00:18.910079 13748 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230802 15:00:18.910208 13748 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_DEPTH
+[I20230802 15:00:18.910245 13748 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_DEPTH streamType=OB_STREAM_DEPTH
+[I20230802 15:00:18.910277 13748 Pipeline.cpp:239] Start stream done!
+[I20230802 15:00:18.910305 13748 Pipeline.cpp:222] Pipeline start() done!
+[I20230802 15:00:18.927377 13765 FrameBufferManager.cpp:33] New frame buffer allocated=0.293365MB, total usage: {allocated=0.293365MB, max limit=2048MB}
+[W20230802 15:00:18.927564 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:18.960887 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:18.993889 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.010483 13748 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 15:00:19.010742 13748 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 15:00:19.026791 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.059957 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.093215 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.111023 13748 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 15:00:19.111258 13748 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 15:00:19.126502 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:19.158674 13766 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=0.879705MB, max limit=2048MB}
+[W20230802 15:00:19.158883 13766 VideoSensor.cpp:485]  The frame is dropped because data size unexpected, SensorType=OB_SENSOR_DEPTH
+[W20230802 15:00:19.160665 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.193176 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.211488 13748 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 15:00:19.211699 13748 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 15:00:19.226595 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.259987 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.293247 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.311955 13748 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 15:00:19.312126 13748 Pipeline.cpp:86] frameSet is nullptr
+[W20230802 15:00:19.326563 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.360918 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[I20230802 15:00:19.361483 13766 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_8FrameSetEEE, obj addr:548011017872, frame obj total size:0.000174522MB
+[I20230802 15:00:19.387392 13766 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=1.46605MB, max limit=2048MB}
+[W20230802 15:00:19.393419 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.412353 13748 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230802 15:00:19.412561 13748 Pipeline.cpp:86] frameSet is nullptr
+[I20230802 15:00:19.416090 13766 FrameBufferManager.cpp:33] New frame buffer allocated=0.586341MB, total usage: {allocated=2.05239MB, max limit=2048MB}
+[I20230802 15:00:19.417279 13766 FrameBufferManager.cpp:33] New frame buffer allocated=0.000174522MB, total usage: {allocated=2.05256MB, max limit=2048MB}
+[W20230802 15:00:19.427421 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.459993 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.493274 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.526664 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.560176 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.593150 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.626567 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.659905 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.693256 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.727006 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.759943 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.794201 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.826623 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.859869 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.893383 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.926621 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.960624 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:19.993311 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.026626 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.060003 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.093187 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.126677 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.160138 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.193378 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.230186 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.260048 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.293318 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.326802 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.360085 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.394208 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.426918 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.460019 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.493945 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.526746 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.560381 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.593791 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.626824 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.660082 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.693444 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.726855 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.760979 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.793306 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.826817 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.860100 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.893553 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.926750 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.960050 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:20.993429 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.027422 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.060122 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.093374 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.126832 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.160126 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.193490 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.226704 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.260102 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.293402 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.326779 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.359999 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.393437 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.426764 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.460101 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.493397 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.526669 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.560678 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.593287 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.626788 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.660138 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.693323 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.726665 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.760056 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.794508 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.826944 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.860145 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.893407 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.926941 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.960148 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:21.993360 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.026747 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.060063 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.094127 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.126931 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.159993 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.193411 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.226742 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.260071 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.293593 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.326788 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.360010 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR
+[W20230802 15:00:22.393362 13765 VideoSensor.cpp:485]  The frame is dropped because data size large than buffer size, SensorType=OB_SENSOR_COLOR

@@ -1,0 +1,1 @@
+/usr/bin/c++       -rdynamic CMakeFiles/demo03.dir/demo3.cpp.o  -o demo03  -L/home/nvidia/test/03p/../SDK/lib 

@@ -1,0 +1,74 @@
+Log file created at: 2023/07/31 17:27:41
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230731 17:27:41.845824 24320 DeviceManager.cpp:54] DeviceManager init ...
+[I20230731 17:27:41.846246 24320 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230731 17:27:41.865739 24320 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230731 17:27:41.868424 24320 DeviceManager.cpp:373] Current usb device port list::
+[I20230731 17:27:41.868516 24320 DeviceManager.cpp:375]         - 2-3-11.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230731 17:27:41.868552 24320 DeviceManager.cpp:375]         - 2-3-11.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230731 17:27:41.868587 24320 DeviceManager.cpp:375]         - 2-3-11.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230731 17:27:41.868618 24320 DeviceManager.cpp:375]         - 2-3-11.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230731 17:27:41.868646 24320 DeviceManager.cpp:375]         - 2-3-11.7 | Orbbec HID Interface
+[I20230731 17:27:41.868710 24320 DeviceManager.cpp:345] Devices matched:
+[I20230731 17:27:41.868743 24320 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230731 17:27:41.868883 24320 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230731 17:27:41.868927 24320 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230731 17:27:41.868957 24320 DeviceManager.cpp:50] DeviceManager construct done
+[I20230731 17:27:41.868991 24320 Context.cpp:51] Context created!
+[I20230731 17:27:41.869021 24320 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230731 17:27:41.869076 24320 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230731 17:27:41.869279 24320 TofUvcDevice.cpp:293] init sensor map start!
+[I20230731 17:27:41.869328 24320 TofUvcDevice.cpp:311] init sensor map done!
+[I20230731 17:27:41.869364 24320 TofUvcDevice.cpp:179] Create command start!
+[I20230731 17:27:41.869626 24320 VendorCommand.cpp:187] VendorCommand constructor 0x2a3e81c0
+[I20230731 17:27:41.869686 24320 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230731 17:27:41.869719 24320 TofUvcDevice.cpp:228] Create command done!
+[I20230731 17:27:41.876319 24320 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230731 17:27:41.876441 24320 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230731 17:27:41.880879 24320 HostProtocol.cpp:791] Init read rawData failed!
+[W20230731 17:27:41.881055 24320 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230731 17:27:41.881326 24320 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230731 17:27:41.881438 24320 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230731 17:27:41.917220 24320 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230731 17:27:41.917958 24320 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230731 17:27:41.918048 24320 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230731 17:27:41.918296 24320 Pipeline.cpp:26] Pipeline init ...
+[W20230731 17:27:41.918360 24320 Pipeline.cpp:170] Default config file is not loaded!
+[I20230731 17:27:41.918424 24320 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230731 17:27:41.918489 24320 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230731 17:27:41.918790 24320 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230731 17:27:41.918846 24320 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230731 17:27:41.918905 24320 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230731 17:27:41.919112 24320 Pipeline.cpp:47] Pipeline init done!
+[I20230731 17:27:41.936440 24320 ObUvcDevice.cpp:56] uvc_open success
+[W20230731 17:27:41.937577 24320 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230731 17:27:41.937667 24320 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230731 17:27:41.937767 24320 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_COLOR
+[I20230731 17:27:41.937813 24320 TofUvcDevice.cpp:387] Color sensor has been created!
+[I20230731 17:27:41.938041 24320 VideoSensor.cpp:389] Query stream profile! size= 90, SensorType=OB_SENSOR_COLOR
+[I20230731 17:27:41.940017 24320 ObUvcDevice.cpp:56] uvc_open success
+[W20230731 17:27:41.940608 24320 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230731 17:27:41.944773 24320 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230731 17:27:41.947687 24320 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_DEPTH
+[I20230731 17:27:41.947942 24320 TofUvcDevice.cpp:363] Depth sensor has been created!
+[I20230731 17:27:41.948081 24320 VideoSensor.cpp:154] device has Y16 format,no need to add virtual format!
+[I20230731 17:27:41.948128 24320 VideoSensor.cpp:389] Query stream profile! size= 12, SensorType=OB_SENSOR_DEPTH
+[W20230731 17:27:41.948585 24320 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230731 17:27:41.950834 24320 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230731 17:27:41.950915 24320 Pipeline.cpp:181] Pipeline start() start!
+[I20230731 17:27:41.951522 24320 FrameProcessingBlockManager.cpp:75]  FrameProcessingBlockManager started, 0 processingblocks contained!
+[I20230731 17:27:41.951586 24320 Pipeline.cpp:226] Start stream ...
+[I20230731 17:27:41.951637 24320 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_COLOR
+[I20230731 17:27:41.951687 24320 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:708732048, frame obj total size:0.293365MB
+[I20230731 17:27:41.951769 24320 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230731 17:27:41.951824 24320 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230731 17:27:41.951866 24320 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230731 17:27:41.952253 24320 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_RGB888
+[I20230731 17:27:41.952371 24320 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230731 17:27:41.952426 24320 ObUvcDevice.cpp:325] playProfile: infIndex= 1 selected_format.width= 640 height=480.format=5

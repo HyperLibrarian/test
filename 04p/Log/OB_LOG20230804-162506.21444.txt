@@ -1,0 +1,54 @@
+Log file created at: 2023/08/04 16:25:06
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230804 16:25:06.934376 21444 DeviceManager.cpp:54] DeviceManager init ...
+[I20230804 16:25:06.934756 21444 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230804 16:25:06.942662 21444 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230804 16:25:06.943312 21444 DeviceManager.cpp:373] Current usb device port list::
+[I20230804 16:25:06.943383 21444 DeviceManager.cpp:375]         - 2-3-6.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230804 16:25:06.943445 21444 DeviceManager.cpp:375]         - 2-3-6.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230804 16:25:06.943496 21444 DeviceManager.cpp:375]         - 2-3-6.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230804 16:25:06.943526 21444 DeviceManager.cpp:375]         - 2-3-6.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230804 16:25:06.943553 21444 DeviceManager.cpp:375]         - 2-3-6.7 | Orbbec HID Interface
+[I20230804 16:25:06.943634 21444 DeviceManager.cpp:345] Devices matched:
+[I20230804 16:25:06.943668 21444 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230804 16:25:06.943993 21444 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230804 16:25:06.944057 21444 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230804 16:25:06.944089 21444 DeviceManager.cpp:50] DeviceManager construct done
+[I20230804 16:25:06.944119 21444 Context.cpp:51] Context created!
+[I20230804 16:25:06.944169 21444 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230804 16:25:06.944228 21444 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230804 16:25:06.944447 21444 TofUvcDevice.cpp:293] init sensor map start!
+[I20230804 16:25:06.944499 21444 TofUvcDevice.cpp:311] init sensor map done!
+[I20230804 16:25:06.944530 21444 TofUvcDevice.cpp:179] Create command start!
+[E20230804 16:25:06.944705 21444 HandleLibusb.hpp:79] failed to claim usb interface: 0, error: OB_USB_STATUS_BUSY
+[I20230804 16:25:06.944842 21444 VendorCommand.cpp:187] VendorCommand constructor 0x1a838710
+[I20230804 16:25:06.944900 21444 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230804 16:25:06.944931 21444 TofUvcDevice.cpp:228] Create command done!
+[I20230804 16:25:06.946427 21444 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230804 16:25:06.946498 21444 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230804 16:25:06.948204 21444 HostProtocol.cpp:791] Init read rawData failed!
+[W20230804 16:25:06.948310 21444 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230804 16:25:06.948573 21444 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230804 16:25:06.948701 21444 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230804 16:25:06.984144 21444 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230804 16:25:06.984473 21444 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230804 16:25:06.984596 21444 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230804 16:25:06.984660 21444 Pipeline.cpp:26] Pipeline init ...
+[W20230804 16:25:06.984747 21444 Pipeline.cpp:170] Default config file is not loaded!
+[I20230804 16:25:06.984839 21444 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230804 16:25:06.984912 21444 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230804 16:25:06.984975 21444 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230804 16:25:06.985020 21444 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230804 16:25:06.985083 21444 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230804 16:25:06.985131 21444 Pipeline.cpp:47] Pipeline init done!
+[I20230804 16:25:06.985184 21444 Pipeline.cpp:181] Pipeline start() start!
+[I20230804 16:25:06.985225 21444 Pipeline.cpp:185] Load default config!
+[W20230804 16:25:06.988566 21444 ObUvcDevice.cpp:52] uvc_open  path=2-3-6.1 already opened
+[I20230804 16:25:06.989650 21444 VendorCommand.cpp:439] disableHeartBeat heartBeatHelper_: 0
+[I20230804 16:25:07.009479 21444 VendorCommand.cpp:356] handleDeviceDetached

@@ -1,0 +1,19 @@
+Log file created at: 2023/08/01 17:31:55
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230801 17:31:55.964080 29629 DeviceManager.cpp:54] DeviceManager init ...
+[I20230801 17:31:55.964531 29629 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230801 17:31:55.968336 29629 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230801 17:31:55.968456 29629 DeviceManager.cpp:373] Current usb device port list::
+[I20230801 17:31:55.968519 29629 DeviceManager.cpp:362] No device matched!
+[I20230801 17:31:55.968709 29629 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230801 17:31:55.968756 29629 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230801 17:31:55.968813 29629 DeviceManager.cpp:50] DeviceManager construct done
+[I20230801 17:31:55.968845 29629 Context.cpp:51] Context created!
+[W20230801 17:31:55.968910 29629 ObException.cpp:5] No device found, fail to create pipeline!
+[I20230801 17:31:55.969055 29629 Context.cpp:55] Context destroying ...
+[I20230801 17:31:55.969089 29629 DeviceManager.cpp:103] DeviceManager destroy ...
+[I20230801 17:31:55.969131 29629 ContextLibusb.cpp:56] UsbContext::stopEventHandler()
+[I20230801 17:31:55.969695 29629 DeviceManager.cpp:131] DeviceManager destroy done
+[I20230801 17:31:55.969736 29629 DeviceManager.cpp:137] DeviceManager Destructors  done

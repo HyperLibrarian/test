@@ -1,0 +1,3 @@
+/home/nvidia/test/02/build/CMakeFiles/rebuild_cache.dir
+/home/nvidia/test/02/build/CMakeFiles/demo2.dir
+/home/nvidia/test/02/build/CMakeFiles/edit_cache.dir

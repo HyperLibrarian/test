@@ -1,0 +1,21 @@
+Log file created at: 2023/08/02 15:05:20
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230802 15:05:20.986267 15637 DeviceManager.cpp:54] DeviceManager init ...
+[I20230802 15:05:20.986712 15637 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230802 15:05:21.129776 15637 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[E20230802 15:05:21.130520 15637 ObV4lDevice.cpp:48] getDeviceCapabilities : Cannot open '/dev/video3
+[E20230802 15:05:21.130995 15637 ObV4lDevice.cpp:48] getDeviceCapabilities : Cannot open '/dev/video1
+[E20230802 15:05:21.131563 15637 ObV4lDevice.cpp:48] getDeviceCapabilities : Cannot open '/dev/video2
+[I20230802 15:05:21.131716 15637 DeviceManager.cpp:373] Current usb device port list::
+[I20230802 15:05:21.131757 15637 DeviceManager.cpp:362] No device matched!
+[I20230802 15:05:21.132977 15637 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230802 15:05:21.133069 15637 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230802 15:05:21.133958 15637 DeviceManager.cpp:50] DeviceManager construct done
+[I20230802 15:05:21.135707 15637 Context.cpp:51] Context created!
+[I20230802 15:05:21.136219 15637 Context.cpp:55] Context destroying ...
+[I20230802 15:05:21.136276 15637 DeviceManager.cpp:103] DeviceManager destroy ...
+[I20230802 15:05:21.136646 15637 ContextLibusb.cpp:56] UsbContext::stopEventHandler()
+[I20230802 15:05:21.137907 15637 DeviceManager.cpp:131] DeviceManager destroy done
+[I20230802 15:05:21.137964 15637 DeviceManager.cpp:137] DeviceManager Destructors  done

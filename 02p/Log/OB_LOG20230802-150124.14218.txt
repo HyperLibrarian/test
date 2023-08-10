@@ -1,0 +1,51 @@
+Log file created at: 2023/08/02 15:01:24
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230802 15:01:24.231595 14218 DeviceManager.cpp:54] DeviceManager init ...
+[I20230802 15:01:24.232034 14218 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230802 15:01:24.240887 14218 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230802 15:01:24.241564 14218 DeviceManager.cpp:373] Current usb device port list::
+[I20230802 15:01:24.241652 14218 DeviceManager.cpp:375]         - 2-3-9.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230802 15:01:24.241683 14218 DeviceManager.cpp:375]         - 2-3-9.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230802 15:01:24.241712 14218 DeviceManager.cpp:375]         - 2-3-9.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230802 15:01:24.241739 14218 DeviceManager.cpp:375]         - 2-3-9.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230802 15:01:24.241765 14218 DeviceManager.cpp:375]         - 2-3-9.7 | Orbbec HID Interface
+[I20230802 15:01:24.241828 14218 DeviceManager.cpp:345] Devices matched:
+[I20230802 15:01:24.241856 14218 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230802 15:01:24.241972 14218 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230802 15:01:24.242013 14218 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230802 15:01:24.242043 14218 DeviceManager.cpp:50] DeviceManager construct done
+[I20230802 15:01:24.242071 14218 Context.cpp:51] Context created!
+[I20230802 15:01:24.242101 14218 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230802 15:01:24.242158 14218 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230802 15:01:24.242354 14218 TofUvcDevice.cpp:293] init sensor map start!
+[I20230802 15:01:24.242424 14218 TofUvcDevice.cpp:311] init sensor map done!
+[I20230802 15:01:24.242457 14218 TofUvcDevice.cpp:179] Create command start!
+[E20230802 15:01:24.242616 14218 HandleLibusb.hpp:79] failed to claim usb interface: 0, error: OB_USB_STATUS_BUSY
+[I20230802 15:01:24.242780 14218 VendorCommand.cpp:187] VendorCommand constructor 0x179b9050
+[I20230802 15:01:24.242830 14218 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230802 15:01:24.242861 14218 TofUvcDevice.cpp:228] Create command done!
+[I20230802 15:01:24.245852 14218 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230802 15:01:24.245954 14218 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230802 15:01:24.248293 14218 HostProtocol.cpp:791] Init read rawData failed!
+[W20230802 15:01:24.248405 14218 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230802 15:01:24.248693 14218 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230802 15:01:24.248780 14218 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230802 15:01:24.285339 14218 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230802 15:01:24.286064 14218 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230802 15:01:24.286139 14218 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230802 15:01:24.286185 14218 Pipeline.cpp:26] Pipeline init ...
+[W20230802 15:01:24.286231 14218 Pipeline.cpp:170] Default config file is not loaded!
+[I20230802 15:01:24.286332 14218 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230802 15:01:24.286417 14218 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:01:24.286520 14218 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230802 15:01:24.286603 14218 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230802 15:01:24.286666 14218 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230802 15:01:24.286715 14218 Pipeline.cpp:47] Pipeline init done!
+[W20230802 15:01:24.289567 14218 ObUvcDevice.cpp:52] uvc_open  path=2-3-9.1 already opened
+[W20230802 15:01:24.291641 14218 ObUvcDevice.cpp:52] uvc_open  path=2-3-9.3 already opened

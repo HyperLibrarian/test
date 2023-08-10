@@ -1,0 +1,610 @@
+Log file created at: 2023/08/10 09:18:09
+Running on machine: miivii-tegra
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20230810 09:18:09.003221 11363 DeviceManager.cpp:54] DeviceManager init ...
+[I20230810 09:18:09.003630 11363 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20230810 09:18:09.116039 11363 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20230810 09:18:09.118525 11363 DeviceManager.cpp:373] Current usb device port list::
+[I20230810 09:18:09.118993 11363 DeviceManager.cpp:375]         - 2-3-2.0 | Orbbec(R) Femto (TM) 3D Data Channel
+[I20230810 09:18:09.119341 11363 DeviceManager.cpp:375]         - 2-3-2.1 | Orbbec(R) Femto (TM) 3D Camera RGB
+[I20230810 09:18:09.119714 11363 DeviceManager.cpp:375]         - 2-3-2.3 | Orbbec(R) Femto (TM) 3D Camera Depth
+[I20230810 09:18:09.120090 11363 DeviceManager.cpp:375]         - 2-3-2.5 | Orbbec(R) Femto (TM) 3D Camera IR
+[I20230810 09:18:09.120427 11363 DeviceManager.cpp:375]         - 2-3-2.7 | Orbbec HID Interface
+[I20230810 09:18:09.120877 11363 DeviceManager.cpp:345] Devices matched:
+[I20230810 09:18:09.132079 11363 DeviceManager.cpp:349]   - tofDevice = 1
+[I20230810 09:18:09.132360 11363 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20230810 09:18:09.132436 11363 DeviceManager.cpp:99] DeviceManager init  done!
+[I20230810 09:18:09.132488 11363 DeviceManager.cpp:50] DeviceManager construct done
+[I20230810 09:18:09.132535 11363 Context.cpp:51] Context created!
+[I20230810 09:18:09.132586 11363 DeviceManager.cpp:211] DeviceManager  createDevice...
+[I20230810 09:18:09.132659 11363 TofUvcDevice.cpp:16] TofUvcDevice init ...
+[I20230810 09:18:09.132998 11363 TofUvcDevice.cpp:293] init sensor map start!
+[I20230810 09:18:09.133078 11363 TofUvcDevice.cpp:311] init sensor map done!
+[I20230810 09:18:09.133121 11363 TofUvcDevice.cpp:179] Create command start!
+[I20230810 09:18:09.133906 11363 VendorCommand.cpp:187] VendorCommand constructor 0x7f98065270
+[I20230810 09:18:09.134032 11363 TofUvcDevice.cpp:194] create command by vendor usb device
+[I20230810 09:18:09.134083 11363 TofUvcDevice.cpp:228] Create command done!
+[I20230810 09:18:09.135535 11363 AbstractDevice.cpp:364] Default config file is not loaded!
+[I20230810 09:18:09.135686 11363 TofUvcDevice.cpp:232] Init Depth process param start!
+[E20230810 09:18:09.137121 11363 HostProtocol.cpp:791] Init read rawData failed!
+[W20230810 09:18:09.137245 11363 ObException.hpp:40] Request failed, device response with error, errorCode: 1, msg: 
+[W20230810 09:18:09.140147 11363 TofUvcDevice.cpp:279] 
+Execute failure! A libobsensor_exception has occurred!
+	 where: 279 # initDepthProcessParam
+	 msg: Request failed, device response with error, errorCode: 1, msg: 
+	 type: N11libobsensor12io_exceptionE
+[W20230810 09:18:09.140321 11363 TofUvcDevice.cpp:279] get imu calibration param failed!
+[I20230810 09:18:09.180620 11363 TofUvcDevice.cpp:289] Init Depth process param done!
+[I20230810 09:18:09.181145 11363 TofUvcDevice.cpp:72] TofUvcDevice init done!
+[I20230810 09:18:09.181255 11363 DeviceManager.cpp:307] DeviceManager createDevice done!
+[I20230810 09:18:09.181334 11363 Pipeline.cpp:26] Pipeline init ...
+[W20230810 09:18:09.181386 11363 Pipeline.cpp:170] Default config file is not loaded!
+[I20230810 09:18:09.181493 11363 Pipeline.cpp:172] loadFrameQueueSizeConfig() config queue size: 10
+[W20230810 09:18:09.181599 11363 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230810 09:18:09.181681 11363 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[W20230810 09:18:09.183075 11363 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230810 09:18:09.183331 11363 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230810 09:18:09.183387 11363 Pipeline.cpp:47] Pipeline init done!
+[I20230810 09:18:09.189257 11363 ObUvcDevice.cpp:56] uvc_open success
+[W20230810 09:18:09.192167 11363 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230810 09:18:09.192360 11363 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230810 09:18:09.192539 11363 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_COLOR
+[I20230810 09:18:09.192591 11363 TofUvcDevice.cpp:387] Color sensor has been created!
+[I20230810 09:18:09.192880 11363 VideoSensor.cpp:389] Query stream profile! size= 90, SensorType=OB_SENSOR_COLOR
+[I20230810 09:18:09.200709 11363 ObUvcDevice.cpp:56] uvc_open success
+[W20230810 09:18:09.200914 11363 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230810 09:18:09.200987 11363 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230810 09:18:09.203728 11363 VideoSensor.cpp:283] VideoSensor created, SensorType=OB_SENSOR_DEPTH
+[I20230810 09:18:09.203821 11363 TofUvcDevice.cpp:363] Depth sensor has been created!
+[I20230810 09:18:09.203910 11363 VideoSensor.cpp:154] device has Y16 format,no need to add virtual format!
+[I20230810 09:18:09.203965 11363 VideoSensor.cpp:389] Query stream profile! size= 12, SensorType=OB_SENSOR_DEPTH
+[W20230810 09:18:09.204113 11363 FrameProcessingBlock.cpp:21] Default config file is not loaded!
+[I20230810 09:18:09.204185 11363 FrameProcessingBlock.cpp:23] FrameProcessingBlock() config frame queue size: 10
+[I20230810 09:18:09.204231 11363 Pipeline.cpp:181] Pipeline start() start!
+[I20230810 09:18:09.204896 11363 FrameProcessingBlockManager.cpp:75]  FrameProcessingBlockManager started, 0 processingblocks contained!
+[I20230810 09:18:09.204968 11363 Pipeline.cpp:226] Start stream ...
+[I20230810 09:18:09.205020 11363 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_COLOR
+[I20230810 09:18:09.205096 11363 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10ColorFrameEEE, obj addr:548011433104, frame obj total size:0.293365MB
+[I20230810 09:18:09.205160 11363 FrameBufferManager.cpp:123] ColorFrame bufferManager created!
+[I20230810 09:18:09.205207 11363 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230810 09:18:09.205253 11363 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230810 09:18:09.205296 11363 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_RGB888
+[I20230810 09:18:09.205340 11363 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230810 09:18:09.205390 11363 ObUvcDevice.cpp:325] playProfile: infIndex= 1 selected_format.width= 640 height=480.format=5
+[I20230810 09:18:09.211581 11363 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230810 09:18:09.214468 11363 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_COLOR
+[I20230810 09:18:09.214577 11363 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_COLOR streamType=OB_STREAM_COLOR
+[I20230810 09:18:09.214628 11363 VideoSensor.cpp:502] VideoSensor::start, SensorType=OB_SENSOR_DEPTH
+[I20230810 09:18:09.214690 11363 FrameBufferManager.hpp:58] FrameBufferManager created! @N11libobsensor18FrameBufferManagerINS_10DepthFrameEEE, obj addr:548011433248, frame obj total size:0.586341MB
+[I20230810 09:18:09.214751 11363 FrameBufferManager.cpp:107] DepthFrame bufferManager created!
+[I20230810 09:18:09.214792 11363 FrameProcessor.cpp:75]  FrameProcessor stoped!
+[I20230810 09:18:09.214830 11363 FrameProcessor.cpp:66]  FrameProcessor started, 1 block contained!
+[I20230810 09:18:09.214869 11363 VideoSensor.cpp:579] Profile: width=640, height=480, fps=30, format=OB_FORMAT_Y16
+[I20230810 09:18:09.214908 11363 ObUvcDevice.cpp:71] ObUvcDevice::startStream()...
+[I20230810 09:18:09.214952 11363 ObUvcDevice.cpp:325] playProfile: infIndex= 3 selected_format.width= 640 height=480.format=8
+[I20230810 09:18:09.224408 11363 ObUvcDevice.cpp:76] ObUvcDevice::startStream() done
+[I20230810 09:18:09.224547 11363 VideoSensor.cpp:625] Stream starting! SensorType=OB_SENSOR_DEPTH
+[I20230810 09:18:09.224593 11363 Pipeline.cpp:237] Sensor start, sensorType=OB_SENSOR_DEPTH streamType=OB_STREAM_DEPTH
+[I20230810 09:18:09.224637 11363 Pipeline.cpp:239] Start stream done!
+[I20230810 09:18:09.224676 11363 Pipeline.cpp:222] Pipeline start() done!
+[W20230810 09:18:09.324838 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.325126 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.425315 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.425501 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.525714 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.526031 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.626294 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.626600 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.726886 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.727154 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.827438 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.827651 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:09.927907 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:09.928134 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.028407 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.028646 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.128988 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.129186 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.229468 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.229669 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.330003 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.330219 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.430454 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.431146 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.531386 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.531666 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.631966 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.632311 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.732597 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.732822 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.833068 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.833287 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:10.933598 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:10.934228 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.034852 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.035118 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.135442 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.135617 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.235894 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.236119 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.336377 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.336616 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.436875 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.437126 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.537418 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.537617 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.637857 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.638051 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.738272 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.738561 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.838860 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.839105 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:11.939384 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:11.939605 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.039909 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.040227 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.140542 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.140733 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.240968 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.241204 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.341504 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.341691 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.441972 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.442155 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.542447 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.542649 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.642899 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.643143 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.743405 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.744597 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.846685 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.847798 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:12.948861 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:12.949115 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.049412 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.049607 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.149905 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.150141 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.250382 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.250571 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.351362 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.351514 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.451792 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.451961 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.552515 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.552713 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.653002 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.653239 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.753520 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.753760 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.854038 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.854236 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:13.954535 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:13.955219 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.055444 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.055647 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.155871 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.156158 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.256438 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.256669 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.356942 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.357136 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.457415 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.457587 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.557869 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.558076 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.658361 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.658540 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.758797 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.759019 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.859328 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.859510 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:14.959789 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:14.960112 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.060386 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.060624 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.160890 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.161918 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.262867 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.263072 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.363298 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.363621 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.463909 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.464146 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.564440 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.564610 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.664904 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.665082 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.765364 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.765545 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.865792 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.865960 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:15.966260 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:15.967192 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.067487 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.067687 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.168028 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.168226 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.268507 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.268677 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.368978 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.369227 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.469435 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.469635 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.569896 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.570284 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.671501 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.671687 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.771944 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.772163 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.872457 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.872684 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:16.972951 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:16.973124 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.073403 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.073591 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.173873 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.174134 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.274384 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.274932 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.375214 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.375511 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.475767 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.476109 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.576382 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.577090 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.677358 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.677587 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.778347 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.778743 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.879009 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.879204 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:17.979496 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:17.979701 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.080016 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.080216 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.180583 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.180764 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.281025 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.281230 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.381510 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.381686 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.481930 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.482146 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.582391 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.582542 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.682804 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.682983 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.783207 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.785301 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.886385 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.887063 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:18.987371 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:18.987735 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.088088 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.088308 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.188565 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.188752 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.288983 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.289224 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.389504 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.389724 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.489992 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.490152 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.590431 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.590608 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.690783 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.690979 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.791222 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.791436 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.891810 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.892120 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:19.992331 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:19.993258 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.093586 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.099560 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.199887 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.200173 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.300433 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.300679 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.401836 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.402038 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.502351 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.502646 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.602932 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.603125 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.703323 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.704033 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.804288 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.804976 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:20.905208 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:20.905957 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.006345 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.006548 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.106770 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.108067 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.208300 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.208926 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.309159 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.309639 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.410445 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.410677 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.510907 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.511838 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.612232 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.612468 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.712801 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.713223 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.813516 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.813925 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:21.914211 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:21.914438 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.014696 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.014897 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.115173 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.116114 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.216506 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.217315 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.317663 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.318624 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.418956 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.419654 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.519918 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.520630 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.620872 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.621117 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.721443 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.721604 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.821872 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.822633 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:22.922907 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:22.923110 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.023397 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.023636 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.123891 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.124190 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.224450 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.225886 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.326213 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.327062 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.427843 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.428781 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.529481 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.529759 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.630452 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.633049 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.733448 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.734174 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.834434 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.836639 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:23.937701 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:23.937904 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.038159 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.038417 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.138685 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.138939 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.239233 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.239456 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.339718 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.340576 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.440948 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.441174 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.541507 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.542294 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.642599 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.643424 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.743728 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.744553 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.845878 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.846051 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:24.946341 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:24.948426 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.048663 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.049347 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.149590 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.150275 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.250500 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.250731 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.350991 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.351857 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.452306 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.453264 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.553539 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.554287 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.654544 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.654769 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.755028 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.755935 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.856317 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.856547 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:25.957480 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:25.957623 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.057812 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.058049 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.158294 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.158991 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.259202 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.259871 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.360141 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.360886 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.461156 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.461396 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.561681 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.562440 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.662758 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.663625 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.763939 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.764899 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.865206 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.865984 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:26.966295 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:26.966549 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.066829 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.067090 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.167368 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.168200 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.268471 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.269273 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.369544 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.370311 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.470629 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.471293 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.571537 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.571717 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.671928 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.672235 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.772481 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.772732 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.873035 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.873240 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:27.973522 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:27.973678 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.073925 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.074155 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.174458 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.174728 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.275008 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.275223 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.375535 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.375713 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.476397 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.478382 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.578675 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.578836 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.679071 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.679225 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.779438 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.779604 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.879814 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.880067 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:28.980338 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:28.981012 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.081225 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.081421 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.181633 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.181816 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.282063 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.282832 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.383232 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.384096 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.484535 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.485371 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.585659 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.586555 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.686833 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.687068 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.787353 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.787685 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.887928 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.888695 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:29.988924 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:29.989123 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.089311 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.089566 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.190783 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.191025 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.291268 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.291512 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.391798 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.392046 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.492273 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.492523 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.592834 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.593000 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.693307 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.693473 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.793660 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.794310 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.894553 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.894682 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:30.994866 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:30.995066 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.095293 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.095503 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.195765 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.197031 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.297266 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.297473 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.397790 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.398041 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.498340 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.498513 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.598827 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.599614 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.699896 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.700217 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.800525 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.801046 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:31.901599 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:31.901803 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.002187 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.002925 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.103365 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.103533 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.204217 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.204464 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.304659 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.305243 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.406386 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.413362 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.516510 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.517377 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.617617 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.617761 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.718449 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.718669 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.818892 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.819515 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:32.919734 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:32.919912 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.020203 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.020860 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.121086 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.121289 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.221540 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.221783 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.322047 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.322288 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.422534 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.422811 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.523067 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.523319 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.623561 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.623780 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.724054 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.724247 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.824455 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.824751 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:33.925513 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:33.925751 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.026050 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.026698 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.127277 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.127545 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.228461 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.228735 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.328980 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.329226 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.429507 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.429802 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.530057 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.530325 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.630651 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.630905 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.731184 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.731431 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.831710 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.831912 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:34.932286 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:34.933082 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:35.033313 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:35.033607 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:35.133899 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:35.134179 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:35.234422 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:35.234676 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:35.334929 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:35.335197 11363 Pipeline.cpp:86] frameSet is nullptr
+[W20230810 09:18:35.435515 11363 Pipeline.cpp:316] waitForFrame timeout= 100
+[W20230810 09:18:35.435839 11363 Pipeline.cpp:86] frameSet is nullptr
