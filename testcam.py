@@ -30,6 +30,7 @@ def main():
             break
 
     orbbec_cap.release()
+    orbbec_cap = None
 
 
 if __name__ == '__main__':
