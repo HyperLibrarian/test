@@ -1,0 +1,3 @@
+/home/nvidia/test/05p/build/CMakeFiles/demo5.dir
+/home/nvidia/test/05p/build/CMakeFiles/edit_cache.dir
+/home/nvidia/test/05p/build/CMakeFiles/rebuild_cache.dir

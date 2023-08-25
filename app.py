@@ -9,20 +9,26 @@ import time
 
 camera_g = None
 status = 1
+isOrbbecFeed = 0
+isOrbbecSave = 4
+isCPP = 0
 
 class VideoCamera():
     def __init__(self):
         # 通过opencv获取实时视频流
-        self.video = cv2.VideoCapture(0) 
-        print(os.getpid())
-        print(0, self.video.isOpened()) 
+        if isOrbbecFeed:
+            self.video = cv2.VideoCapture(0, cv2.CAP_OBSENSOR)
+        else:
+            self.video = cv2.VideoCapture(0) 
+        print("相机进程号", os.getpid())
+        print("相机是否打开：", self.video.isOpened()) 
         global status
-        if self.video.isOpened() == False :
+        if self.video.isOpened() == False:
             status = 0
-            print(00)
+            print("相机未打开")
     
     def __del__(self):
-        print(1)
+        print("相机释放")
         self.video.release()
         #time.sleep(3)
           
@@ -30,15 +36,23 @@ class VideoCamera():
     def get_frame(self):
         # print(2)
         # print(self.video.isOpened())
-        success, image = self.video.read()
+        if isOrbbecFeed: 
+            self.video.grab()
+            print("grab")
+            success, image = self.video.retrieve(None, cv2.CAP_OBSENSOR_BGR_IMAGE)
+            print("retrieve")
+        else:
+            success, image = self.video.read()
+            # print("read")
         # print(3)
         # 因为opencv读取的图片并非jpeg格式，因此要用motion JPEG模式需要先将图片转码成jpg格式图片
-        if image is not None:
-            # print(8)
-            ret, jpeg = cv2.imencode('.jpg', image)
+        if success:
+            _, jpeg = cv2.imencode('.jpg', image)
+            # print("imencode")
+            #jpeg = cv2.resize(image, (image.shape[1],image.shape[0]), interpolation=cv2.INTER_AREA)
             return jpeg.tobytes()
         else:
-            # print(9)
+            # print("返回帧为空")
             return None
         
     def release(self):
@@ -47,6 +61,7 @@ class VideoCamera():
 def gen(camera):
 
     result = True
+    print("开始视频推流")
     while result:
         # print(5)
         frame = camera.get_frame()
@@ -71,7 +86,8 @@ def index():
 
 @app.route('/api/video/video_feed/source', methods=['GET'])  # 返回视频流响应
 def video_feed():
-    print(123)
+
+    print("调用视频流")
     global status
     global camera_g
     camera_g = None
@@ -90,12 +106,10 @@ def video_feed():
     else:
         camera = VideoCamera()
         camera_g = camera
-        print(222, camera_g)
+        print("创建相机", camera_g)
         return Response(gen(camera),
                         mimetype='multipart/x-mixed-replace; boundary=frame') 
 
-
-  
 
 @app.route('/api/video/stop_stream', methods=['GET'])   # 设备关闭
 def stop_stream():
@@ -121,6 +135,7 @@ def stop_stream():
     }
     return jsonify(response)
 
+
 @app.route('/api/img/viewer', methods=['POST'])
 def viewer():   # 显示图片
     
@@ -141,7 +156,7 @@ def viewer():   # 显示图片
 @app.route('/api/save/capture', methods=['GET'])
 def capture():   # 拍摄
     
-    lib2 = ctypes.CDLL('./lib/libdemo2.so')  # 加载共享库
+    # lib2 = ctypes.CDLL('./lib/libdemo2.so')  # 加载共享库
     # lib4 = ctypes.CDLL('./lib/libdemo4.so')  # 加载共享库
     # lib4.USBReboot()
     # lib2.SaveImg()
@@ -149,6 +164,7 @@ def capture():   # 拍摄
     # lib4.USBReboot()
 
     str = './Img/Color_0000.png&./Img/Depth_0000.png'  # 字符串序列
+    color_depth_png =  './Img/Color_to_Depth_0000.png'
     color_png,  depth_png= str.split('&', 1)
 
     global camera_g
@@ -157,11 +173,64 @@ def capture():   # 拍摄
         camera_g.release()
         camera_g = None
         status = 0
-    video1 = cv2.VideoCapture(0) 
-    _, frame1 = video1.read()
-    cv2.imwrite(color_png, frame1)
-    video1.release()
-    video1 = None
+    
+    if isOrbbecSave == 1:
+        video1 = cv2.VideoCapture(0, cv2.CAP_OBSENSOR)
+        video1.grab()
+        _, bgr_image = video1.retrieve(None, cv2.CAP_OBSENSOR_BGR_IMAGE)
+        cv2.imwrite(color_png, bgr_image)
+        video1.grab()
+        _, depth_map = video1.retrieve(None, cv2.CAP_OBSENSOR_DEPTH_MAP)
+        cv2.imwrite(depth_png, depth_map)
+        color_depth_map = cv2.normalize(depth_map, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8UC1)
+        color_depth_map = cv2.applyColorMap(color_depth_map, cv2.COLORMAP_JET)
+        cv2.imwrite(color_depth_png, color_depth_map)
+            
+        video1.release()
+        video1 = None
+
+    else:
+        if isCPP:
+        
+            lib2 = ctypes.CDLL('./lib/libdemo2.so')  # 加载共享库
+            lib2.SaveImg()
+        else:
+            if isOrbbecSave == 2:
+                video1 = cv2.VideoCapture(0)
+                _, bgr_image = video1.read()
+                cv2.imwrite(color_png, bgr_image)
+                video2 = cv2.VideoCapture(1)
+                video1.release()
+                video1 = None
+                video2 = cv2.VideoCapture(0, cv2.CAP_OBSENSOR)
+                video2.grab()
+                _, depth_map = video2.retrieve(None, cv2.CAP_OBSENSOR_DEPTH_MAP)
+                cv2.imwrite(depth_png, depth_map)
+                color_depth_map = cv2.normalize(depth_map, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8UC1)
+                color_depth_map = cv2.applyColorMap(color_depth_map, cv2.COLORMAP_JET)
+                cv2.imwrite(color_depth_png, color_depth_map)
+                video2.release()
+                video2 = None
+            
+            else:
+                if isOrbbecSave == 3:
+                    video1 = cv2.VideoCapture(0)
+                    _, bgr_image = video1.read()
+                    cv2.imwrite(color_png, bgr_image)
+                    video2 = cv2.VideoCapture(1)
+                    _, depth_map = video2.read()
+                    cv2.imwrite(depth_png, depth_map)
+                    video1.release()
+                    video1 = None
+                    video2.release()
+                    video2 = None
+                else:
+                    video1 = cv2.VideoCapture(0) 
+                    _, frame1 = video1.read()
+                    cv2.imwrite(color_png, frame1)
+                    video1.release()
+                    video1 = None
+
 
     #video2 = cv2.VideoCapture(1) 
     #_, frame2 = video2.read()
@@ -201,4 +270,5 @@ def segment():   # 测距
 
 
 if __name__ == '__main__':
+    print("服务进程号", os.getppid())
     app.run(host = '0.0.0.0', port = 5001, debug = True)  

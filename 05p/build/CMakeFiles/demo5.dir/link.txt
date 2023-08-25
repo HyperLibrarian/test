@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libdemo5.so -o libdemo5.so CMakeFiles/demo5.dir/demo5.cpp.o 
