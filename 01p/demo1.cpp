@@ -75,7 +75,7 @@ bool depth2cloud(Mat& depth, PointCloud::Ptr& cloud)
 	return true;
 }
 
-int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis)
+int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int dist0, int minPN ,int rMin, int rMax)
 {
 	// -----------------------------计算法线------------------------------------
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
@@ -90,10 +90,10 @@ int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis)
 	std::vector<int> indices(cloud->points.size());
 	std::iota(std::begin(indices), std::end(indices), (int)0);
 
-	float dist = 0.001;         // 与模型距离阈值，小于该阈值的视为内点
-	float minPointNum = 2400; // 最小点数
-	float radiusMin = 0.0015;    // 圆柱半径的最小值
-	float radiusMax = 0.0040;      // 圆柱半径的最大值
+	float dist = (float)dist0 * 0.0001;         // 与模型距离阈值，小于该阈值的视为内点
+	float minPointNum = (float)minPN; // 最小点数
+	float radiusMin = (float)rMin * 0.0001;    // 圆柱半径的最小值
+	float radiusMax = (float)rMax * 0.0001;      // 圆柱半径的最大值
 	int iters = 0;
 	cout << "圆柱参数(轴线一点坐标a、轴线方向向量b、半径r）为：\n" << endl;
 	do
@@ -371,7 +371,7 @@ int ResultViewer(int cnt, int timestamp, vector<vector<Point3d>> axis)
 
 
 // 主函数
-int CalCylinder(int timestamp)
+int CalCylinder(int timestamp, int dist, int minPN ,int rMin, int rMax)
 {
 	pngnum = std::to_string(timestamp);
 	std::string image_path = "./Img/Depth_" + pngnum + ".png";
@@ -382,7 +382,7 @@ int CalCylinder(int timestamp)
 
 	int cnt;
 	vector<vector<Point3d>> axis(2);
-	cnt = CylinderSegment(cloud, axis);
+	cnt = CylinderSegment(cloud, axis, dist, minPN, rMin, rMax);
 
 	ResultViewer(cnt, timestamp, axis);
 
