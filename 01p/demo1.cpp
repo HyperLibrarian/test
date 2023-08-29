@@ -77,6 +77,50 @@ bool depth2cloud(Mat& depth, PointCloud::Ptr& cloud)
 
 int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int dist0, int minPN ,int rMin, int rMax)
 {
+	
+	//第一步：定义输入的原始数据以及分割获得的点、平面系数coefficients、存储内点的索引集合对象inliers
+	pcl::PointCloud<pcl::PointXYZ>::Ptr planar_segment(new pcl::PointCloud<pcl::PointXYZ>);//创建分割对象
+	pcl::ModelCoefficients::Ptr coefficients(new pcl::ModelCoefficients);//模型系数
+	pcl::PointIndices::Ptr inliers(new pcl::PointIndices);//索引列表
+	pcl::SACSegmentation<pcl::PointXYZ> seg;//分割对象
+
+	pcl::ExtractIndices<pcl::PointXYZ> extract0;//提取器
+
+	int n_piece = 1;//需要探测的面的个数
+
+	//第二步：使用RANSAC获取点数最多的面
+	for (int i = 0; i < n_piece; i++)
+	{
+		seg.setOptimizeCoefficients(true);		//使用内部点重新估算模型参数
+		seg.setModelType(pcl::SACMODEL_PLANE);   //设置模型类型
+		seg.setMethodType(pcl::SAC_RANSAC);      //设置随机采样一致性方法类型
+		seg.setDistanceThreshold(0.003);          //设定距离阈值，决定点被认为是局内点时必须满足的条件
+		seg.setInputCloud(cloud);
+		seg.segment(*inliers, *coefficients);
+		if (inliers->indices.size() < (0.7 * cloud->points.size()))
+		{
+			extract0.setInputCloud(cloud);
+			extract0.setIndices(inliers);
+			extract0.setNegative(false);
+			//提取探测出来的平面
+			extract0.filter(*planar_segment);
+			//planar_segment为该次探测出来的面片，可以单独进行保存，此处省略
+			//剔除探测出的平面，在剩余点中继续探测平面
+			extract0.setNegative(true);
+			extract0.filter(*cloud);
+
+			// ----------------------------------------分割结果分类保存------------------------------------------
+			pcl::io::savePCDFileBinary("./Result/cloud/" + pngnum + "_0.pcd", *cloud);
+			cout << "第[" << i + 1 << "]块点云保存完毕！" << endl;
+			cout << "平面方程为：\n"
+				<< coefficients->values[0] << "x + "
+				<< coefficients->values[1] << "y + "
+				<< coefficients->values[2] << "z + "
+				<< coefficients->values[3] << " = 0"
+				<< endl;
+		}
+	}
+	
 	// -----------------------------计算法线------------------------------------
 	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
 	pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
@@ -109,7 +153,7 @@ int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int d
 		model->setRadiusLimits(radiusMin, radiusMax);// 设置圆柱半径的范围
 		pcl::RandomSampleConsensus<pcl::PointXYZ> ransac(model);
 		ransac.setDistanceThreshold(dist);
-		ransac.setMaxIterations(200);
+		ransac.setMaxIterations(500);
 		ransac.computeModel();
 		ransac.getInliers(inners); // 获取拟合圆柱的内点
 		totalInners.insert(totalInners.end(), inners.begin(), inners.end());
@@ -145,7 +189,7 @@ int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int d
 		// 如果剩余点个数不满足分割要求的最小点数，则结束分割，退出循环。
 	} while (indices.size() > minPointNum);
 
-	return iters-1;
+	return iters;
 }
 
 double getVecAngle(Vec3d v1, Vec3d v2)
@@ -267,37 +311,38 @@ int ResultViewer(int cnt, int timestamp, vector<vector<Point3d>> axis)
 	double xlong = 999;
 	double ylong = 999;
 	double zlong = 999;
+	double anglelimit = 35;
 	while (k < cnt)
 	{
 		xangle = getXaxisAngle(axis[1][k]);
 		yangle = getYaxisAngle(axis[1][k]);
 		zangle = getZaxisAngle(axis[1][k]);
-		k++;
 		cout << xangle << "°    " << yangle << "°    " << zangle << "°    " << endl;
-		if (xangle < 20 && xangle < yangle && xangle < zangle) {
+		if (xangle < anglelimit && xangle < yangle && xangle < zangle) {
 			drawlines(axis[0][k], axis[1][k], src, 1);
 			fx[k] = 1;
 
 		}
 		else {
-			if (yangle < 20 && yangle < xangle && yangle < zangle) {
+			if (yangle < anglelimit && yangle < xangle && yangle < zangle) {
 				drawlines(axis[0][k], axis[1][k], src, 2);
 				fx[k] = 2;
 			}
 			else {
-				if (zangle < 20 && zangle < xangle && zangle < yangle) {
+				if (zangle < anglelimit && zangle < xangle && zangle < yangle) {
 					drawlines(axis[0][k], axis[1][k], src, 3);
 					fx[k] = 3;
 				}
 			}
 		}
+		k++;
 	}
 	cout << "循环1" << endl;
 	k = 0;
 	double distance0;
 	double zmax = 0;
 	int zmaxk = 0;
-	while (k < cnt)
+	while (k < (cnt-1))
 	{
 		cout << "循环2" << endl;
 		int cntk = k + 1;
@@ -324,6 +369,10 @@ int ResultViewer(int cnt, int timestamp, vector<vector<Point3d>> axis)
 			zmaxk = k;
 		}
 		k++;
+	}
+	if (axis[0][k].z > zmax) {
+			zmax = axis[0][k].z;
+			zmaxk = k;
 	}
 
 	cout << zmaxk << endl;
