@@ -2388,8 +2388,13 @@ CMakeFiles/demo1.dir/demo1.cpp.o: ../demo1.cpp \
   /usr/include/boost/detail/select_type.hpp \
   /usr/include/boost/unordered/detail/fwd.hpp \
   /usr/include/boost/unordered/unordered_map_fwd.hpp \
-  /usr/include/boost/fusion/sequence/intrinsic/at_key.hpp
+  /usr/include/boost/fusion/sequence/intrinsic/at_key.hpp \
+  /usr/include/pcl-1.8/pcl/filters/convolution_3d.h \
+  /usr/include/pcl-1.8/pcl/filters/impl/convolution_3d.hpp \
+  /usr/include/pcl-1.8/pcl/common/point_operators.h
 
+
+/usr/include/pcl-1.8/pcl/filters/convolution_3d.h:
 
 /usr/include/boost/fusion/sequence/intrinsic/at_key.hpp:
 
@@ -2724,6 +2729,8 @@ CMakeFiles/demo1.dir/demo1.cpp.o: ../demo1.cpp \
 /usr/include/boost/fusion/iterator/detail/advance.hpp:
 
 /usr/include/boost/fusion/support/iterator_base.hpp:
+
+/usr/include/pcl-1.8/pcl/filters/impl/convolution_3d.hpp:
 
 /usr/include/boost/fusion/iterator/iterator_facade.hpp:
 
@@ -6590,6 +6597,8 @@ CMakeFiles/demo1.dir/demo1.cpp.o: ../demo1.cpp \
 /usr/include/boost/type_traits/has_modulus.hpp:
 
 /usr/include/boost/type_traits/has_modulus_assign.hpp:
+
+/usr/include/pcl-1.8/pcl/common/point_operators.h:
 
 /usr/include/boost/smart_ptr/detail/shared_count.hpp:
 

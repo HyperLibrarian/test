@@ -17,15 +17,16 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 
-#include <pcl/search/kdtree.h>                     // KDtree搜索
-#include <pcl/features/normal_3d.h>                // 计算法向量
-#include <pcl/ModelCoefficients.h>                 // 模型系数
-#include <pcl/sample_consensus/ransac.h>           // RANSAC
-#include <pcl/sample_consensus/method_types.h>     // 随机参数估计方法
-#include <pcl/sample_consensus/model_types.h>      // 模型定义
-#include <pcl/segmentation/sac_segmentation.h>     // RANSAC分割
+#include <pcl/search/kdtree.h>                      // KDtree搜索
+#include <pcl/features/normal_3d.h>                 // 计算法向量
+#include <pcl/ModelCoefficients.h>                  // 模型系数
+#include <pcl/sample_consensus/ransac.h>            // RANSAC
+#include <pcl/sample_consensus/method_types.h>      // 随机参数估计方法
+#include <pcl/sample_consensus/model_types.h>       // 模型定义
+#include <pcl/segmentation/sac_segmentation.h>      // RANSAC分割
 #include <pcl/sample_consensus/sac_model_cylinder.h>// 圆柱
 #include <pcl/filters/extract_indices.h>
+#include <pcl/filters/convolution_3d.h>             // 高斯滤波
 
 
 using namespace std;
@@ -38,7 +39,18 @@ typedef pcl::PointCloud<PointT> PointCloud;
 string pngnum;
 
 //奥比中光TOF相机内参 fx:490.084 fy : 490.084 cx : 316.404 cy : 241.755 width : 640 height : 480
-const double camera_factor = 1000; const double camera_cx = 316.404; const double camera_cy = 241.755; const double camera_fx = 490.084; const double camera_fy = 490.084;
+const double camera_factor = 1000; 
+//默认
+//const double camera_cx = 316.404; const double camera_cy = 241.755; const double camera_fx = 490.084; const double camera_fy = 490.084;
+//const double color_cx = 316.404; const double color_cy = 241.755; const double color_fx = 490.084; const double color_fy = 490.084;
+//自测标定结果
+//const double camera_cx = 319.853; const double camera_cy = 244.390; const double camera_fx = 496.491; const double camera_fy = 496.879;
+//const double color_cx = 328.146; const double color_cy = 230.062; const double color_fx = 518.169; const double color_fy = 518.627;
+//软件读取结果
+const double camera_cx = 316.393; const double camera_cy = 241.764; const double camera_fx = 490.121; const double camera_fy = 490.121;
+const double color_cx = 301.393; const double color_cy = 241.764; const double color_fx = 515.432; const double color_fy = 515.432;
+//const double color_cx = 333.739; const double color_cy = 236.986; const double color_fx = 515.432; const double color_fy = 515.432;
+
 
 extern "C"
 {
@@ -73,6 +85,34 @@ bool depth2cloud(Mat& depth, PointCloud::Ptr& cloud)
 	pcl::io::savePCDFile("./Result/cloud/" + pngnum + ".pcd", *cloud);
 	cout << "Point cloud is saved." << endl;
 	return true;
+}
+
+int GaussFilters(PointCloud::Ptr& cloud, PointCloud::Ptr& gassFilter)
+{
+	// -----------------------------基于高斯核函数的卷积滤波实现---------------------------
+	pcl::filters::GaussianKernel<pcl::PointXYZ, pcl::PointXYZ> kernel;
+	kernel.setSigma(4);//高斯函数的标准方差，决定函数的宽度
+	kernel.setThresholdRelativeToSigma(4);//设置相对Sigma参数的距离阈值
+	kernel.setThreshold(0.05);//设置距离阈值，若点间距离大于阈值则不予考虑
+	cout << "Kernel made" << endl;
+
+	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
+	tree->setInputCloud(cloud);
+	cout << "KdTree made" << endl;
+
+	// -------------------------------设置Convolution 相关参数-----------------------------
+	pcl::filters::Convolution3D<pcl::PointXYZ, pcl::PointXYZ, pcl::filters::GaussianKernel<pcl::PointXYZ, pcl::PointXYZ>> convolution;
+	convolution.setKernel(kernel);//设置卷积核
+	convolution.setInputCloud(cloud);
+	convolution.setNumberOfThreads(8);
+	convolution.setSearchMethod(tree);
+	convolution.setRadiusSearch(0.01);
+	cout << "Convolution Start" << endl;
+	//pcl::PointCloud<pcl::PointXYZ>::Ptr gassFilter(new pcl::PointCloud<pcl::PointXYZ>);
+	convolution.convolve(*gassFilter);
+	pcl::io::savePCDFileASCII("./Result/cloud/" + pngnum + "_GS.pcd", *gassFilter);
+	cout << "Convolution End" << endl;
+	return 1;
 }
 
 int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int dist0, int minPN ,int rMin, int rMax)
@@ -153,7 +193,7 @@ int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int d
 		model->setRadiusLimits(radiusMin, radiusMax);// 设置圆柱半径的范围
 		pcl::RandomSampleConsensus<pcl::PointXYZ> ransac(model);
 		ransac.setDistanceThreshold(dist);
-		ransac.setMaxIterations(500);
+		ransac.setMaxIterations(300);
 		ransac.computeModel();
 		ransac.getInliers(inners); // 获取拟合圆柱的内点
 		totalInners.insert(totalInners.end(), inners.begin(), inners.end());
@@ -245,10 +285,10 @@ bool drawlines(Point3d a, Point3d b, Mat& src, int colornum)
     c.y = a.y + b.y;
     c.z = a.z + b.z;
 
-    int x1 = (int)(a.x * camera_fx / a.z + camera_cx);
-    int y1 = (int)(a.y * camera_fy / a.z + camera_cy);
-    int x2 = (int)(c.x * camera_fx / c.z + camera_cx);
-    int y2 = (int)(c.y * camera_fy / c.z + camera_cy);
+    int x1 = (int)(a.x * color_fx / a.z + color_cx);
+    int y1 = (int)(a.y * color_fy / a.z + color_cy);
+    int x2 = (int)(c.x * color_fx / c.z + color_cx);
+    int y2 = (int)(c.y * color_fy / c.z + color_cy);
 
     startPoint = Point(x1, y1);
     endPoint = Point(x2, y2);
@@ -423,16 +463,24 @@ int ResultViewer(int cnt, int timestamp, vector<vector<Point3d>> axis)
 int CalCylinder(int timestamp, int dist, int minPN ,int rMin, int rMax)
 {
 	pngnum = std::to_string(timestamp);
+
+	//读取深度图并生成点云
 	std::string image_path = "./Img/Depth_" + pngnum + ".png";
 	cv::Mat depth;
 	depth = cv::imread(image_path, CV_16UC1);
 	PointCloud::Ptr cloud(new PointCloud);
 	depth2cloud(depth, cloud);
 
+	//点云预处理
+	PointCloud::Ptr cloud0(new PointCloud);
+	GaussFilters(cloud, cloud0);
+
+	//圆柱分割
 	int cnt;
 	vector<vector<Point3d>> axis(2);
-	cnt = CylinderSegment(cloud, axis, dist, minPN, rMin, rMax);
+	cnt = CylinderSegment(cloud0, axis, dist, minPN, rMin, rMax);
 
+	//结果可视化
 	ResultViewer(cnt, timestamp, axis);
 
 	return 1;
