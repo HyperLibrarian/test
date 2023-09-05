@@ -64,7 +64,7 @@ bool depth2cloud(Mat& depth, PointCloud::Ptr& cloud)
 			// 获取深度图中(m,n)处的值
 			ushort d = depth.ptr<ushort>(m)[n];
 			// d 可能没有值或超出所需范围，若如此，跳过此点
-			if (d <= 0 || d > 3000)
+			if (d <= 0 || d > 4000)
 				continue;
 			// d 存在符合要求的值，则向点云增加一个点
 			PointT p;
@@ -137,7 +137,7 @@ int CylinderSegment(PointCloud::Ptr& cloud, vector<vector<Point3d>>& axis, int d
 		seg.setDistanceThreshold(0.003);          //设定距离阈值，决定点被认为是局内点时必须满足的条件
 		seg.setInputCloud(cloud);
 		seg.segment(*inliers, *coefficients);
-		if (inliers->indices.size() < (0.7 * cloud->points.size()))
+		if ((inliers->indices.size() < (0.7 * cloud->points.size())) && (inliers->indices.size() > (0.4 * cloud->points.size())))
 		{
 			extract0.setInputCloud(cloud);
 			extract0.setIndices(inliers);
@@ -351,7 +351,7 @@ int ResultViewer(int cnt, int timestamp, vector<vector<Point3d>> axis)
 	double xlong = 999;
 	double ylong = 999;
 	double zlong = 999;
-	double anglelimit = 35;
+	double anglelimit = 90;
 	while (k < cnt)
 	{
 		xangle = getXaxisAngle(axis[1][k]);
